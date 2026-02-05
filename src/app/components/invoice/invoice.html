@@ -1,0 +1,35 @@
+<div class="container my-5">
+    <div class="card shadow-sm">
+
+        <!-- HEADER -->
+        <div class="card-header bg-dark text-white text-center">
+            <h2 class="mb-0">FACTURA</h2>
+        </div>
+
+        <div class="card-body">
+
+            <!-- INFO GENERAL -->
+            <div class="row mb-4">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5 class="text-primary mb-3">Datos de la factura</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>ID:</strong> {{ invoice.id }}
+                        </li>
+                    </ul>
+                </div>
+                <!-- COMPANY COMPONENT -->
+                <company-view [company]="invoice.company"></company-view>
+            </div>
+
+            <!-- CUSTOMER COMPONENT -->
+            <div class="mb-4">
+                <customer-view [customer]="invoice.customer"></customer-view>
+            </div>
+            <!-- INVOICE ITEM COMPONENT -->
+            <div>
+                <invoice-item-view [invoiceItem]="invoice.items"></invoice-item-view>
+            </div>
+        </div>
+    </div>
+</div>

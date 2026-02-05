@@ -1,0 +1,17 @@
+<div class="col-md-5">
+    <h5 class="text-primary mb-3">Empresa</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <strong>RUC:</strong> {{ company.ruc }}
+        <li class="list-group-item">
+            <strong>Nombre:</strong> {{ company.name }}
+        </li>
+        <li class="list-group-item">
+            <strong>Dirección:</strong>
+            {{ company.address.city }} -
+            {{ company.address.principalStreet }}
+            {{ company.address.code }}
+            {{ company.address.secondaryStreet }}
+        </li>
+    </ul>
+</div>

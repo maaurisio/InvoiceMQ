@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header bg-light">
+        <h5 class="mb-0">Detalle de productos</h5>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered align-middle mb-0">
+            <thead class="table-dark">
+                <tr>
+                    <th>Producto</th>
+                    <th class="text-end">Precio</th>
+                    <th class="text-center">Cantidad</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @for (item of invoiceItem; track $index) {
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td class="text-end">{{ item.product.price }}</td>
+                    <td class="text-center">{{ item.quantity }}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
