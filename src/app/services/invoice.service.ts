@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Invoice } from '../model/invoice.model';
-import { invoiceData } from '../data/invoice.data';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class InvoiceService {
-  //services trae la data
-  private invoice: Invoice = invoiceData;
-  constructor() { }
+  private apiUrl = 'http://localhost:3000/api/invoice'; // tu API
 
-  getInvoice(): Invoice {
-    //retorna la factura cargada desde el archivo de datos
-    return this.invoice;
+  constructor(private http: HttpClient) {}
+
+  getInvoice(): Observable<Invoice> {
+    return this.http.get<Invoice>(this.apiUrl);
   }
-
 }
